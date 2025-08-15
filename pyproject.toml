@@ -1,0 +1,32 @@
+[project]
+name = "langchain-nl-to-sql-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aioredis>=2.0.1",
+    "asyncpg>=0.30.0",
+    "chromadb>=1.0.15",
+    "faker>=37.5.3",
+    "google-cloud-aiplatform>=1.103.0",
+    "langchain-anthropic>=0.3.18",
+    "langchain-community>=0.3.27",
+    "langchain-core>=0.3.69",
+    "langchain-google-vertexai>=2.0.27",
+    "langchain-openai>=0.3.28",
+    "langgraph>=0.6.3",
+    "openai>=1.96.1",
+    "pandas>=2.3.1",
+    "psycopg2>=2.9.10",
+    "psycopg2-binary>=2.9.10",
+    "redis>=6.4.0",
+    "sqlalchemy>=2.0.41",
+    "sqlparse>=0.5.3",
+    "toolbox-langchain>=0.4.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "python3.11",
+]

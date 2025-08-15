@@ -1,0 +1,36 @@
+sources:
+  my-db-source:
+    kind: postgres
+    host: 34.30.63.17
+    port: 5432
+    database: postgres
+    user: postgres
+    password: ashish6677
+
+tools:
+  get-schema:
+    kind: postgres-sql
+    source: my-db-source
+    description: Retrieve database schema information including tables and columns.
+    parameters: []
+    statement: |
+      SELECT table_name, column_name
+      FROM information_schema.columns
+      WHERE table_schema = 'public'
+      ORDER BY table_name, ordinal_position;
+
+  run-query:
+    kind: postgres-sql
+    source: my-db-source
+    description: Execute a SQL query against the database.
+    templateParameters:
+      - name: query
+        type: string
+        description: The SQL query to execute.
+    statement: |
+      {{.query}}
+
+toolsets:
+  my-toolset:
+    - get-schema
+    - run-query
