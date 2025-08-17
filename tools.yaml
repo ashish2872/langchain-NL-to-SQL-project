@@ -30,7 +30,24 @@ tools:
     statement: |
       {{.query}}
 
+  # call-openai:
+  #   kind: http
+  #   method: POST
+  #   endpoint: https://api.openai.com/v1/chat/completions
+  #   headers:
+  #     Authorization: "Bearer ${OPENAI_API_KEY}"
+  #     Content-Type: "application/json"
+  #   body: |
+  #     {
+  #       "model": "{{.model}}",
+  #       "messages": {{.messages}},
+  #       "temperature": {{.temperature}},
+  #       "max_tokens": {{.max_tokens}}
+  #     }
+
+
 toolsets:
   my-toolset:
     - get-schema
     - run-query
+    # - call-openai

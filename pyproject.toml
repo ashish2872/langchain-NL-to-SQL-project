@@ -16,6 +16,7 @@ dependencies = [
     "langchain-google-vertexai>=2.0.27",
     "langchain-openai>=0.3.28",
     "langgraph>=0.6.3",
+    "mcp-toolbox>=0.1.7",
     "openai>=1.96.1",
     "pandas>=2.3.1",
     "psycopg2>=2.9.10",
